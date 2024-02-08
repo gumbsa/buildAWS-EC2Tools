@@ -1,0 +1,23 @@
+digraph "Cloudwatch Agent Deployment"
+
+{
+#Objects
+"EC2 Instance" [shape=box, color=blue]
+"User Data" [shape=box, color=blue]
+"Insstance Profile"  [shape=box, color=blue]
+"IAM Role" [shape=box, color=blue]
+"IAM Policy" [shape=box, color=blue]
+"Role/Policy Attachment" [shape=box, color=blue]
+
+
+
+"EC2 Instance" -> "User Data" -> "Script: .\scripts\utility-install.sh" -> "CloudWatch Agent"
+
+"EC2 Instance" -> "Insstance Profile" -> "IAM Role"
+
+"Role/Policy Attachment" -> "IAM Role"
+
+"Role/Policy Attachment" -> "IAM Policy"
+
+
+}
